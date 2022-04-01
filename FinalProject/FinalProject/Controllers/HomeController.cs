@@ -23,12 +23,27 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult GiveGame()
+        {
+            return View();
+        }
+
+        public IActionResult GetGame()
         {
             return View();
         }
 
         public IActionResult WickNM()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
         {
             return View();
         }
