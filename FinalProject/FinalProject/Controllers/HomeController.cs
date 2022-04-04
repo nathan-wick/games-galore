@@ -1,5 +1,6 @@
 ﻿using FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,16 +12,18 @@ namespace FinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private GameContext context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        public HomeController(GameContext context) => this.context = context;
 
         public IActionResult Index()
         {
-            return View();
+            var games = context.Games
+                .Include(g => g.GameGenre)
+                .Include(g => g.GamePlatform)
+                .Include(g => g.GamePublisher)
+                .OrderBy(g => g.GameName).ToList();
+            return View(games);
         }
 
         public IActionResult About()
