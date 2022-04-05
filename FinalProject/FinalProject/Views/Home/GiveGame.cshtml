@@ -1,7 +1,61 @@
-﻿@{
+﻿@model GameViewModel
+@{
     ViewData["Title"] = "Give a Video Game";
 }
 
-<!-- TODO Create and style a form to donate a video game -->
+@section scripts {
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/
+                       jquery.validate.unobtrusive.min.js"></script>
+}
 
 <h1>@ViewData["Title"]</h1>
+
+<form asp-action="GiveGame" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="CurrentGame.GameName">Name</label>
+        <input asp-for="CurrentGame.GameName" class="form-control">
+        <span asp-validation-for="CurrentGame.GameName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentGame.GameReleaseDate">Release Date</label>
+        <input asp-for="CurrentGame.GameReleaseDate" class="form-control">
+        <span asp-validation-for="CurrentGame.GameReleaseDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentGame.GameGenreId">Genre</label>
+        <select asp-for="CurrentGame.GameGenreId"
+                asp-items="@(new SelectList(Model.Genres, "GenreId", "GenreName"))"
+                class="form-control">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="CurrentGame.GameGenreId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentGame.GamePlatformId">Platform</label>
+        <select asp-for="CurrentGame.GamePlatformId"
+                asp-items="@(new SelectList(Model.Platforms, "PlatformId", "PlatformName"))"
+                class="form-control">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="CurrentGame.GamePlatformId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentGame.GamePublisherId">Publisher</label>
+        <select asp-for="CurrentGame.GamePublisherId"
+                asp-items="@(new SelectList(Model.Publishers, "PublisherId", "PublisherName"))"
+                class="form-control">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="CurrentGame.GamePublisherId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Give Game</button>
+    <a asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

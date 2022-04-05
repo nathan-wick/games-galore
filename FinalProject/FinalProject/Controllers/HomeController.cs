@@ -13,8 +13,17 @@ namespace FinalProject.Controllers
     public class HomeController : Controller
     {
         private GameContext context { get; set; }
+        private List<Genre> genres { get; set; }
+        private List<Platform> platforms { get; set; }
+        private List<Publisher> publishers { get; set; }
 
-        public HomeController(GameContext context) => this.context = context;
+        public HomeController(GameContext context)
+        {
+            this.context = context;
+            genres = context.Genres.OrderBy(g => g.GenreName).ToList();
+            publishers = context.Publishers.OrderBy(p => p.PublisherName).ToList();
+            platforms = context.Platforms.OrderBy(p => p.PlatformName).ToList();
+        }
 
         public IActionResult Index()
         {
@@ -31,9 +40,28 @@ namespace FinalProject.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult GiveGame()
         {
-            return View();
+            return View(new GameViewModel { Genres = genres, Publishers = publishers, Platforms = platforms });
+        }
+
+        [HttpPost]
+        public IActionResult GiveGame(GameViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Games.Add(model.CurrentGame);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Genres = genres;
+                model.Publishers = publishers;
+                model.Platforms = platforms;
+                return View(model);
+            }
         }
 
         public IActionResult GetGame()
@@ -42,6 +70,11 @@ namespace FinalProject.Controllers
         }
 
         public IActionResult WickNM()
+        {
+            return View();
+        }
+
+        public IActionResult AdkinsDK()
         {
             return View();
         }

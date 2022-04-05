@@ -11,6 +11,8 @@ namespace FinalProject.Models
         public string GameName { get; set; }
 
         [Required(ErrorMessage = "Please enter the game's release date.")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? GameReleaseDate { get; set; }
 
         [Required(ErrorMessage = "Please enter the game's platform.")]

@@ -3,8 +3,6 @@
     ViewData["Title"] = "Available Games";
 }
 
-<!-- TODO List video games available -->
-
 <h1>@ViewData["Title"]</h1>
 
 <table class="table table-bordered table-striped">
@@ -21,7 +19,7 @@
         @foreach (var game in Model) { 
         <tr>
             <td>@game.GameName</td>
-            <td>@game.GameReleaseDate</td>
+            <td>@game.GameReleaseDate.Value.ToString("MMMM dd, yyyy")</td>
             <td>@game.GamePlatform.PlatformName</td>
             <td>@game.GameGenre.GenreName</td>
             <td>@game.GamePublisher.PublisherName</td>
