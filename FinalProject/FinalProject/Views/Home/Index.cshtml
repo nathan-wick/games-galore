@@ -23,6 +23,7 @@
             <td>@game.GamePlatform.PlatformName</td>
             <td>@game.GameGenre.GenreName</td>
             <td>@game.GamePublisher.PublisherName</td>
+            <td><a asp-action="GetGame" asp-route-id="@game.GameId" class="btn btn-primary">Checkout</a></td>
         </tr>
         }
     </tbody>

@@ -64,9 +64,20 @@ namespace FinalProject.Controllers
             }
         }
 
-        public IActionResult GetGame()
+        [HttpGet]
+        public ViewResult GetGame(int id)
         {
-            return View();
+            var game = context.Games.Find(id);
+            return View(game);
+        }
+
+        [HttpPost]
+        public RedirectToActionResult GetGame(Game game)
+        {
+            context.Remove(game);
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult WickNM()

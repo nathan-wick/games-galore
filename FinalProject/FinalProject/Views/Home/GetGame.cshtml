@@ -1,7 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Get a Video Game";
+﻿@model Game
+
+@{
+    ViewData["Title"] = "Checkout " + @Model.GameName;
 }
 
-<!-- TODO Create and style a form to request a video game -->
-
 <h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Release Date</th>
+            <th>Platform</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.GameName</td>
+            <td>@Model.GameReleaseDate.Value.ToString("MMMM dd, yyyy")</td>
+            <td>@Model.GamePlatform.PlatformName</td>
+            <td>@Model.GameGenre.GenreName</td>
+            <td>@Model.GamePublisher.PublisherName</td>
+        </tr>
+    </tbody>
+</table>
+
+<form asp-action="GetGame" method="post">
+    <input type="hidden" asp-for="GameId" />
+    <button type="submit" class="btn btn-primary">Checkout</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
