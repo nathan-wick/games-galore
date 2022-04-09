@@ -2,27 +2,82 @@
     ViewData["Title"] = "Games Galore";
 }
 
-<!-- TODO Add content and style -->
+<div class="text-center" style="
+    background-image: url(../img/controller.jpg); 
+    height: 80vh;
+    z-index: 3;
 
-<h1>@ViewData["Title"]</h1>
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+">
+    <h1 class="pt-5">@ViewData["Title"]</h1>
+    <p>The Ultimate Video Game Library</p>
+    <a asp-controller="Game" asp-action="Games" class="btn btn-primary">View Available Games</a>
+</div>
 
-<p>Give and get some video games bro</p>
+<div class="text-center" style="
+    background-image: url(../img/donate.jpg); 
+    height: 80vh;
+    z-index: 2;
 
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+">
+    <h1 class="text-light pt-5">Powered By Donations</h1>
+    <p class="text-light">Donate The Video Games You Don't' Use</p>
+    <a asp-controller="Game" asp-action="Donate" class="btn btn-primary">Donate Games</a>
+</div>
+
+<div class="text-center" style="
+    background-image: url(../img/keyboard.jpg); 
+    height: 80vh;
+    z-index: 1;
+
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+">
+    <h1 class="text-light pt-5">Meet The Team</h1>
     <div class="container">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="About">Meet the Team:</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="WickNM">Nathan Wick</a>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdkinsDK">Derrick Adkins</a>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MacleoJB">Jacob Macleo</a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Nathan Wick"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Nathan Wick</h5>
+                        <p class="card-text">Software Developer</p>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="WickNM">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Derrick Adkins"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Derrick Adkins</h5>
+                        <p class="card-text">Software Developer</p>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="AdkinsDK">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Jacob Macleo"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Jacob Macleo</h5>
+                        <p class="card-text">Software Developer</p>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="MacleoJB">Learn More</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</div>
