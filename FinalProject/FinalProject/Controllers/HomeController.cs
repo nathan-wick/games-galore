@@ -27,17 +27,17 @@ namespace FinalProject.Controllers
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Games()
+        {
             var games = context.Games
                 .Include(g => g.GameGenre)
                 .Include(g => g.GamePlatform)
                 .Include(g => g.GamePublisher)
                 .OrderBy(g => g.GameName).ToList();
             return View(games);
-        }
-
-        public IActionResult About()
-        {
-            return View();
         }
 
         [HttpGet]
@@ -86,6 +86,11 @@ namespace FinalProject.Controllers
         }
 
         public IActionResult AdkinsDK()
+        {
+            return View();
+        }
+
+        public IActionResult MacleoJB()
         {
             return View();
         }
