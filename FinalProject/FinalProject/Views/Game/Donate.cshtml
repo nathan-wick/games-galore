@@ -1,6 +1,6 @@
 ﻿@model GameViewModel
 @{
-    ViewData["Title"] = "Give a Video Game";
+    ViewData["Title"] = "Donate a Video Game";
 }
 
 @section scripts {
@@ -11,7 +11,7 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="GiveGame" method="post">
+<form asp-action="Donate" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-group">
@@ -56,6 +56,6 @@
         <span asp-validation-for="CurrentGame.GamePublisherId" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Give Game</button>
-    <a asp-action="Index" class="btn btn-primary">Cancel</a>
+    <button type="submit" class="btn btn-primary">Donate</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
