@@ -4,13 +4,11 @@
 
 <div class="text-center" style="
     background-image: url(../img/controller.jpg); 
-    height: 80vh;
-    z-index: 3;
-
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 90vh;
     position: relative;
 ">
     <h1 class="pt-5">@ViewData["Title"]</h1>
@@ -19,38 +17,34 @@
 </div>
 
 <div class="text-center" style="
-    background-image: url(../img/donate.jpg); 
-    height: 80vh;
-    z-index: 2;
-
+    background-image: url(../img/donate.jpg);
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    min-height: 90vh;
 ">
     <h1 class="text-light pt-5">Powered By Donations</h1>
-    <p class="text-light">Donate The Video Games You Don't' Use</p>
+    <p class="text-light">Donate The Video Games You Don't Use</p>
     <a asp-controller="Game" asp-action="Donate" class="btn btn-primary">Donate Games</a>
 </div>
 
 <div class="text-center" style="
-    background-image: url(../img/keyboard.jpg); 
-    height: 80vh;
-    z-index: 1;
-
+    background-image: url(../img/keyboard.jpg);
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    min-height: 90vh;
 ">
-    <h1 class="text-light pt-5">Meet The Team</h1>
-    <div class="container">
+    <h1 class="text-light pt-5 mb-4">Meet The Team</h1>
+    <div class="container mb-5">
         <div class="row">
             <div class="col-sm">
-                <div class="card">
-                    <img class="card-img-top" src="" alt="Nathan Wick"/>
+                <div class="card mb-3">
+                    <img class="card-img-top" src="~/img/team/Nathan_Wick.png" alt="Nathan Wick"/>
                     <div class="card-body">
                         <h5 class="card-title">Nathan Wick</h5>
                         <p class="card-text">Software Developer</p>
@@ -59,7 +53,7 @@
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card">
+                <div class="card mb-3">
                     <img class="card-img-top" src="~/img/team/Adkins_Derrick.jpg" alt="Derrick Adkins"/>
                     <div class="card-body">
                         <h5 class="card-title">Derrick Adkins</h5>
@@ -69,7 +63,7 @@
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card">
+                <div class="card mb-3">
                     <img class="card-img-top" src="~/img/team/Macleod_Jacob.png" alt="Jacob Macleod"/>
                     <div class="card-body">
                         <h5 class="card-title">Jacob Macleod</h5>
