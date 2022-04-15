@@ -2,42 +2,24 @@
     ViewData["Title"] = "Games Galore";
 }
 
-<div class="text-center" style="
-    background-image: url(../img/controller.jpg); 
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 90vh;
-    position: relative;
+<div class="text-center parallax" style="
+    background-image: url(../img/controller.jpg);
 ">
     <h1 class="pt-5">@ViewData["Title"]</h1>
     <p>The Ultimate Video Game Library</p>
     <a asp-controller="Game" asp-action="Games" class="btn btn-primary">View Available Games</a>
 </div>
 
-<div class="text-center" style="
+<div class="text-center parallax" style="
     background-image: url(../img/donate.jpg);
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    min-height: 90vh;
 ">
     <h1 class="text-light pt-5">Powered By Donations</h1>
     <p class="text-light">Donate The Video Games You Don't Use</p>
     <a asp-controller="Game" asp-action="Donate" class="btn btn-primary">Donate Games</a>
 </div>
 
-<div class="text-center" style="
+<div class="text-center parallax" style="
     background-image: url(../img/keyboard.jpg);
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    min-height: 90vh;
 ">
     <h1 class="text-light pt-5 mb-4">Meet The Team</h1>
     <div class="container mb-5">
