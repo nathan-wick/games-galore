@@ -10,7 +10,7 @@ namespace FinalProjectTests
     public class HomeTests
     {
         [Fact]
-        public void TestIndex()
+        public void IndexMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.Index();
@@ -18,7 +18,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestWickNM()
+        public void WickNMMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.WickNM();
@@ -26,7 +26,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestAdkinsDK()
+        public void AdkinsDKMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.AdkinsDK();
@@ -34,7 +34,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestMacleoJB()
+        public void MacleoJBMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.MacleoJB();
@@ -42,7 +42,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestSchrieBA()
+        public void SchrieBAMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.SchrieBA();
@@ -50,7 +50,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestPrivacy()
+        public void PrivacyMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.Privacy();
@@ -58,7 +58,7 @@ namespace FinalProjectTests
         }
 
         [Fact]
-        public void TestAboutUs()
+        public void AboutUsMethod_ReturnsAViewResult()
         {
             var controller = new HomeController();
             var result = controller.AboutUs();
