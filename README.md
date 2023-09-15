@@ -1,3 +1,2 @@
-# IT3047C-FinalProject
+# Games Galore
 Web Server Application Development course Final Project Group 1.
-Video presentation: https://youtu.be/1nA7E_DqTAM
